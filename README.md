@@ -4,6 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This is a project developed for Alamo Drafthouse as part of an assessment challenge. Instructions on how to run and test it are written below.
 Further in this ReadMe you can find more details about the implementation.
 
+## Setting up
+
+Before running the application, run `npm install` to install necessary packages.
 ## Development server
 
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -26,6 +29,7 @@ Additional information on development:
 - Some effects were added to the items in order to provide a more natural feeling for the application.
 - Application is also responsive and works in mobile platforms.
 - An extra description was added to any theaters that do not contain movies being displayed.
+- NOTE: If you run into a "No binary for Chrome browser in your platform" problem when running the tests and are using a Linux machine, try following this link: https://developerslogblog.wordpress.com/2019/03/19/how-to-fix-no-binary-for-chrome-browser-on-your-platform/
 
 We hope you enjoy reviewing this work!
 
