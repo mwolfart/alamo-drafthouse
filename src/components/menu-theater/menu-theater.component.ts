@@ -1,20 +1,19 @@
-import { Component } from '@angular/core';
-import axios from 'axios';
-import { Cinema, Film, Session } from 'src/types/data';
+import { Component } from '@angular/core'
+import axios from 'axios'
+import { Cinema, Film, Session } from 'src/types/data'
 
 @Component({
   selector: 'app-menu-theater',
   templateUrl: './menu-theater.component.html',
-  styleUrls: ['./menu-theater.component.sass']
+  styleUrls: ['./menu-theater.component.sass'],
 })
-
 export class MenuTheaterComponent {
   cinemaList: Cinema[] = []
   filmList: Film[] = []
   sessionList: Session[] = []
 
   filmsAtSelectedCinema: Film[] = []
-  selectedCinema: Cinema | null = null 
+  selectedCinema: Cinema | null = null
 
   numberOfCinemaCols: number = this.getNumberOfCinemaCols(window.innerWidth)
   cinemaColsRatio: string = this.getCinemaColsRatio(window.innerWidth)
@@ -36,14 +35,14 @@ export class MenuTheaterComponent {
     if (windowWidth > 812) {
       return 3
     }
-    return (windowWidth > 512 ? 2 : 1)
+    return windowWidth > 512 ? 2 : 1
   }
 
   getCinemaColsRatio(windowWidth: number) {
     if (windowWidth > 812) {
-      return "3:1"
+      return '3:1'
     }
-    return (windowWidth > 512 ? "4:1" : "5:1")
+    return windowWidth > 512 ? '4:1' : '5:1'
   }
 
   getSessionsInCinema(id: string): Session[] {
@@ -52,8 +51,7 @@ export class MenuTheaterComponent {
 
   getFilmsInSessionList(sessions: Session[]): Film[] {
     let foundFilms: string[] = []
-    sessions.map((session) => 
-      !foundFilms.includes(session.filmSlug) && foundFilms.push(session.filmSlug))
+    sessions.map((session) => !foundFilms.includes(session.filmSlug) && foundFilms.push(session.filmSlug))
     const films = foundFilms
       .map((filmSlug) => this.getFilmBySlug(filmSlug))
       .filter((film): film is Film => film !== null)

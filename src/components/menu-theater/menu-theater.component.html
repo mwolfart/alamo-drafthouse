@@ -1,19 +1,21 @@
 <div class="content-box">
-    <h1>FIND A MOVIE</h1>
-    <h2>SELECT THEATER</h2>
-    <mat-grid-list [cols]="numberOfCinemaCols" [rowHeight]="cinemaColsRatio" (window:resize)="onResize($event)">
-        <mat-grid-tile *ngFor="let cinema of cinemaList">
-            <app-action-button 
-                [label]="cinema.name" 
-                [checked]="!!selectedCinema && cinema.id === selectedCinema.id"
-                [id]="cinema.id"
-                (clickCallback)="selectCinema($event)">
-            </app-action-button>
-        </mat-grid-tile>
-    </mat-grid-list>
-    <app-list-films 
-        *ngIf="selectedCinema !== null" 
-        [cinemaName]="selectedCinema.name"
-        [availableFilms]="filmsAtSelectedCinema">
-    </app-list-films>
+  <h1>FIND A MOVIE</h1>
+  <h2>SELECT THEATER</h2>
+  <mat-grid-list [cols]="numberOfCinemaCols" [rowHeight]="cinemaColsRatio" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let cinema of cinemaList">
+      <app-action-button
+        [label]="cinema.name"
+        [checked]="!!selectedCinema && cinema.id === selectedCinema.id"
+        [id]="cinema.id"
+        (clickCallback)="selectCinema($event)"
+      >
+      </app-action-button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <app-list-films
+    *ngIf="selectedCinema !== null"
+    [cinemaName]="selectedCinema.name"
+    [availableFilms]="filmsAtSelectedCinema"
+  >
+  </app-list-films>
 </div>

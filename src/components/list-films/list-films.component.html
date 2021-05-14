@@ -1,11 +1,13 @@
-<h2>FILMS PLAYING AT <span class="cinema-title">{{ cinemaName.toUpperCase() }}</span></h2>
+<h2>
+  FILMS PLAYING AT <span class="cinema-title">{{ cinemaName.toUpperCase() }}</span>
+</h2>
 <div class="film-menu" *ngIf="availableFilms.length > 0">
-    <app-custom-link 
-        *ngFor="let film of availableFilms" 
-        [label]="film.title"
-        [urlSrc]="'https://drafthouse.com/show/'+film.slug"
-    ></app-custom-link>
+  <app-custom-link
+    *ngFor="let film of availableFilms"
+    [label]="film.title"
+    [urlSrc]="'https://drafthouse.com/show/' + film.slug"
+  ></app-custom-link>
 </div>
 <div class="no-films-text" *ngIf="availableFilms.length == 0">
-    Awww, no films available here. Please come back later.
+  Awww, no films available here. Please come back later.
 </div>
