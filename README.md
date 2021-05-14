@@ -32,6 +32,3 @@ Additional information on development:
 - NOTE: If you run into a "No binary for Chrome browser in your platform" problem when running the tests and are using a Linux machine, try following this link: https://developerslogblog.wordpress.com/2019/03/19/how-to-fix-no-binary-for-chrome-browser-on-your-platform/
 
 We hope you enjoy reviewing this work!
-
-Best regards,
-The Ambush team
